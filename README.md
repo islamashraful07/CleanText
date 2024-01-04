@@ -3,9 +3,8 @@ A Node.js module to clean HTML code by removing unwanted classes, line breaks, c
 
 ## Installation
 
-Install the package using npm:
+### Install the package using npm:
 
-```bash
 npm i text_clean_and_modify
 
 
@@ -13,9 +12,10 @@ npm i text_clean_and_modify
 
 const cleanAndModify = require('text_clean_and_modify');
 
-const inputHtml = '<p>This is <span class="unwanted">some</span> HTML code.</p>';
+const inputHtml = 'The string with html tags';
+
 const cleanedHtml = cleanAndModify.cleanHtmlTag(inputHtml);
-console.log(cleanedHtml);
+
 
 ## API
 
@@ -26,11 +26,11 @@ Cleans the input text  by removing unwanted HTML tags, classes, line breaks, com
 input: The input text.
 
 ## Examples
-
-const cleanHtmlCode = require('clean-html-code');
-
-const inputHtml = '<p>This is <span class="unwanted">some</span> HTML code.</p>';
+```html
+const cleanHtmlCode = require('text_clean_and_modify');
+const inputHtml = '<tag>This is <tag2 class="unwanted">some</tag2> HTML code.</tag>';
 const cleanedHtml = cleanHtmlCode.cleanHtmlCode(inputHtml);
 console.log(cleanedHtml);
-// Output: 'This is some HTML code.'
+
+Output: 'This is some HTML code.'
 
