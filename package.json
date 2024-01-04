@@ -1,0 +1,20 @@
+{
+  "name": "cleantext",
+  "version": "1.0.0",
+  "description": "Clean Html, Clean Rich text, Convert html tag to word, Remove blankspace",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/islamashraful07/CleanText.git"
+  },
+  "keywords": ["cleantext","html tag to word tag","remove blankspace"],
+  "author": "Md.Ashraful Islam",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/islamashraful07/CleanText/issues"
+  },
+  "homepage": "https://github.com/islamashraful07/CleanText#readme"
+}
