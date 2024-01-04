@@ -1,5 +1,5 @@
 {
-  "name": "cleantext",
+  "name": "TextCleanAndModiify",
   "version": "1.0.1",
   "description": "Clean Html, Clean Rich text, Convert html tag to word, Remove blankspace",
   "main": "src/index.js",
