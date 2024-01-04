@@ -1,29 +1,29 @@
-function cleanSummernote(input) {
+function cleanHtmlTag(input) {
+        // Remove unwanted classes and line breaks
     var stringStripper = /(\n|\r| class=(")?Mso[a-zA-Z]+(")?)/g;
     var output = input.replace(stringStripper, ' ');
-    
-    var commentStripper = new RegExp('<!--(.*?)-->', 'g');
+
+    // Remove HTML comments
+    var commentStripper = /<!--[\s\S]*?-->/g;
     output = output.replace(commentStripper, '');
 
-    var tagStripper = new RegExp('<(/)*(meta|link|span|\\?xml:|st1:|o:|font)(.*?)>', 'gi');
+    // Remove specified tags
+    var tagStripper = /<(style|script|applet|embed|noframes|noscript)[^>]*>[\s\S]*?<\/\1>/gi;
     output = output.replace(tagStripper, '');
 
-    var badTags = ['style', 'script', 'applet', 'embed', 'noframes', 'noscript'];
-
-    for (var i = 0; i < badTags.length; i++) {
-        var tagStripper = new RegExp('<' + badTags[i] + '.*?' + badTags[i] + '(.*?)>', 'gi');
-        output = output.replace(tagStripper, '');
-    }
-
+    // Remove specified attributes
     var badAttributes = ['style', 'start'];
     for (var i = 0; i < badAttributes.length; i++) {
         var attributeStripper = new RegExp(' ' + badAttributes[i] + '="(.*?)"', 'gi');
         output = output.replace(attributeStripper, '');
     }
 
-    return output;
+    // Remove any remaining HTML tags
+    output = output.replace(/<\/?[^>]+(>|$)/g, '');
+
+    return output.trim();
 }
 
 module.exports = {
-    cleanSummernote: cleanSummernote
+    cleanHtmlTag: cleanHtmlTag
 };
